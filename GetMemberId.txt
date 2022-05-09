@@ -1,0 +1,8 @@
+create or replace PROCEDURE GET_MEMBER_ID
+  ( mem_ID OUT NUMBER)
+  AS
+  BEGIN
+  select max(MemberID)
+  into mem_ID
+  from Users;
+  END GET_MEMBER_ID;

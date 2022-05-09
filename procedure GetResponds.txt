@@ -1,0 +1,8 @@
+create or replace PROCEDURE GET_RESPONDS(iduser in NUMBER, cJobName out sys_refcursor)
+AS
+BEGIN
+open cJobName for 
+SELECT j.jobname, j.jobid
+from responds r ,jobs j 
+where r.userid=iduser and r.jobid = j.jobid;
+END GET_RESPONDS;
